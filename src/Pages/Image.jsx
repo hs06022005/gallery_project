@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState} from 'react'
+import { useState ,useEffect} from 'react'
 import useFetchImage from '../Component/Api'
 
 const Image = () => {
@@ -8,12 +8,23 @@ const Image = () => {
     const [loading, setLoading] = useState(true)
 
   useFetchImage(setData, setLoading,index)
+  useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" 
+      });
+    }, [index]);
 
     const loadingData = () => {
       return (
-      <div className='flex justify-center items-center h-screen'>
-        <h1 className='text-3xl text-white font-bold'>Loading......</h1>
-      </div>
+          <div class="w-75 p-4 text-[1.2rem] rounded-4xl bg-white overflow-hidden grid shadow-[0_0_0_4px_#444,0_0_0_6px_white] relative">
+
+              <div class="absolute inset-0 bg-[#444] origin-right animate-grow"></div>
+
+              <div class="flex items-center justify-center font-bold text-2xl mix-blend-difference z-10">
+                  Loading....
+              </div>
+          </div>
       )
     
   }
@@ -56,9 +67,9 @@ const Image = () => {
 
 
   return (
-    <div className='bg-gradient-to-br from-gray-900 to-black '> 
-        <div className="absolute w-[400px] h-[400px] bg-pink-500 opacity-20 blur-3xl rounded-full top-[-100px] left-[-100px]"></div>
-        <div className="absolute w-[400px] h-[400px] bg-amber-400 opacity-20 blur-3xl rounded-full bottom-[-100px] right-[-100px]"></div>
+    <div className='bg-linear-to-br from-gray-900 to-black '> 
+        <div className="absolute w-100 h-100 bg-pink-500 opacity-20 blur-3xl rounded-full -top-25 -left-25"></div>
+        <div className="absolute w-100 h-100 bg-amber-400 opacity-20 blur-3xl rounded-full -bottom-25 -right-25"></div>
 
       <div className='rounded flex flex-wrap justify-center items-center my-15 pt-10  overflow-y-auto gap-4'> 
         {loading ? (loadingData()) :Display()}
