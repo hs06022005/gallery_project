@@ -27,17 +27,17 @@ import React, { useState } from 'react'
     }
 
     return (
-        <div className="bg-gradient-to-br from-gray-900 to-black min-h-screen flex justify-center items-center text-white relative overflow-hidden">
+        <div className="bg-linear-to-br from-gray-900 to-black min-h-screen flex justify-center items-center text-white relative overflow-hidden">
 
-        <div className="absolute w-[400px] h-[400px] bg-pink-500 opacity-20 blur-3xl rounded-full top-[-100px] left-[-100px]"></div>
-        <div className="absolute w-[400px] h-[400px] bg-amber-400 opacity-20 blur-3xl rounded-full bottom-[-100px] right-[-100px]"></div>
+        <div className="absolute w-100 h-100 bg-pink-500 opacity-20 blur-3xl rounded-full -top-25 -left-25"></div>
+        <div className="absolute w-100 h-100 bg-amber-400 opacity-20 blur-3xl rounded-full -bottom-25 -right-25"></div>
 
         <form
             onSubmit={handleSubmit}
             className="backdrop-blur-md bg-white/10 border border-white/20 p-8 rounded-2xl shadow-xl w-96"
         >
 
-            <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-amber-400 to-pink-500 text-transparent bg-clip-text">
+            <h2 className="text-3xl font-bold text-center mb-6 bg-linear-to-r from-amber-400 to-pink-500 text-transparent bg-clip-text">
             Contact Us
             </h2>
 
@@ -70,7 +70,7 @@ import React, { useState } from 'react'
 
             <button
             type="submit"
-            className="w-full bg-gradient-to-r from-amber-400 to-pink-500 text-black py-3 rounded-lg font-bold hover:scale-105 hover:shadow-lg transition"
+            className="w-full bg-linear-to-r from-amber-400 to-pink-500 text-black py-3 rounded-lg font-bold hover:scale-105 hover:shadow-lg transition"
             >
             Send Message 🚀
             </button>
